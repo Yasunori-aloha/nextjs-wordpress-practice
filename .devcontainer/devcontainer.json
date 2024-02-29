@@ -19,6 +19,20 @@
 	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}/front",
 	"features": {
 		"ghcr.io/devcontainers/features/git:1": {}
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"formulahendry.auto-close-tag",
+				"formulahendry.auto-rename-tag",
+				"aaron-bond.better-comments",
+				"dsznajder.es7-react-js-snippets",
+				"vincaslt.highlight-matching-tag",
+				"xabikos.JavaScriptSnippets",
+				"oderwat.indent-rainbow",
+				"eamodio.gitlens"
+			]
+		}
 	}
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
