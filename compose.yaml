@@ -1,0 +1,39 @@
+services:
+  db:
+    container_name: nw-db
+    image: mysql:8.0.23
+    platform: linux/amd64
+    volumes:
+      - db_data:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: next_wordpress
+      MYSQL_PASSWORD: next_wordpress_password
+
+  wordpress:
+    container_name: nw-wordpress
+    depends_on:
+      - db
+    image: wordpress:beta-php8.3-apache
+    ports:
+      - "8000:80"
+    restart: always
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: next_wordpress
+      WORDPRESS_DB_PASSWORD: next_wordpress_password
+
+  app:
+    container_name: nw-app
+    build: ./front
+    volumes:
+      - ./front:/app:cached
+      - type: volume
+        source: node-modules
+        target: /app/node_modules
+
+volumes:
+    db_data:
+    node-modules:
