@@ -37,7 +37,13 @@ const Home: NextPage = async () => {
 
   const posts = data.posts.edges.map(({ node }) => node);
 
-  return <></>;
+  return (
+    <div>
+      {posts.map((post) => {
+        return <p key={post.id}>{post.title}</p>;
+      })}
+    </div>
+  );
 }
 
 export default Home;
