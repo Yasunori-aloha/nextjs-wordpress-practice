@@ -30,7 +30,11 @@
 				"vincaslt.highlight-matching-tag",
 				"xabikos.JavaScriptSnippets",
 				"oderwat.indent-rainbow",
-				"eamodio.gitlens"
+				"eamodio.gitlens",
+				"bradlc.vscode-tailwindcss",
+				"ionutvmi.path-autocomplete",
+				"christian-kohler.path-intellisense",
+				"csstools.postcss"
 			]
 		}
 	}
